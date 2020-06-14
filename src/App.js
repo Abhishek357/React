@@ -3,6 +3,8 @@ import React,{ Component } from 'react';
 // import { Navbar, NavbarBrand, Form } from 'reactstrap';
 import Main from './components/MainComponent';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+
 // import { DISHES } from './shared/dishes';
 
 // function App() {
@@ -24,6 +26,7 @@ class App extends Component {
   // }
   render() {
     return (
+      <BrowserRouter>
       <div>
         {/* <Navbar dark color="primary">
           <div className="container">
@@ -32,7 +35,9 @@ class App extends Component {
         </Navbar> */}
         {/* <Menu dishes={this.state.dishes} /> */}
         <Main />
+        
       </div>
+      </BrowserRouter>
     );
   }
 }
