@@ -4,6 +4,12 @@ import React,{ Component } from 'react';
 import Main from './components/MainComponent';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { Form } from 'reactstrap';
+import { ConfigureStore } from './redux/configureStore';
+
+const store = ConfigureStore();
+
 
 // import { DISHES } from './shared/dishes';
 
@@ -26,18 +32,20 @@ class App extends Component {
   // }
   render() {
     return (
-      <BrowserRouter>
-      <div>
-        {/* <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-          </div>
-        </Navbar> */}
-        {/* <Menu dishes={this.state.dishes} /> */}
-        <Main />
-        
-      </div>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+        <div>
+          {/* <Navbar dark color="primary">
+            <div className="container">
+              <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
+            </div>
+          </Navbar> */}
+          {/* <Menu dishes={this.state.dishes} /> */}
+          <Main />
+          
+        </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
